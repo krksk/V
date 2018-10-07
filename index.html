@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body {background:rgba(0,0,0,100); perspective: 300px;}
+		#buzz{position: relative; width: 200px; height:200px; top: 50px; left: 60px;}
+		#crying{position: relative; width: 200px; height:200px; top: 50px; left: 120px;}
+		#nobrain{position: relative; width: 200px; height:200px; top: 50px; left: 180px;}
+		#cherry{position: relative; width: 200px; height:200px; top: 50px; left: 240px;}
+		#dd{width: 1.5px; height: 1.5px; background: black; position: absolute; animation-direction: alternate; animation: flicker 10s alternate infinite;}
+		#vbox{position: absolute; left: 50%; top: 450px; transform: translateX(-50%); width: 0px; height: 0px; transition: all 1s; background: black;}
+		#vsource{position: relative; left: 50%; top: -100px; transform: translateX(-50%); width: 0px; transition: all 1s; }
+		@keyframes flicker {
+			0% {
+    		opacity: 1;
+  			}
+  			100% {
+    		opacity: 0;
+  			}
+	</style>
+</head>	
+<body>
+
+<div id="dd"></div>
+<div id="vbox">
+		<video id="vsource" src="./video/buzz.mp4" type="video/mp4">
+  		</video>
+  		</div>
+<div id="legend" style="color:white; position: relative; left:850px; font-size: 30px; margin-top: 10px;">LEGEND never die..</div>
+<img id="buzz" src="buzz.png">
+<img id="crying" src="crying.png">
+<img id="nobrain" src="nobrain.jpg">
+<img id="cherry" src="cherry.jpg">
+<script type="text/javascript">
+
+for(var i=0; i<1000; i++){
+		var t = document.getElementById("dd");
+		var k = t.cloneNode(true);
+		k.style.left = Math.random()*window.innerWidth+"px";
+		k.style.top = Math.random()*window.innerHeight+"px";
+		var time = Math.random();
+		k.style.animationDuration = time+"s"
+		k.style.background = makeColor();
+		document.body.appendChild(k);
+	}
+	function makeColor(){
+		var a = Math.ceil(Math.random()*255);
+		var b = Math.ceil(Math.random()*255);
+		var c = Math.ceil(Math.random()*255);
+		var text = "rgb("+ a +","+ b +","+ c +")";
+		return text;
+	}
+
+	buzz.onclick = function(){
+				vbox.style.background = "black";
+				vbox.style.width = "400px";
+				vbox.style.height = "250px";
+				vsource.style.width = "600px";
+				vsource.setAttribute("src","buzz.mp4");
+				vsource.play();
+			}
+
+	crying.onclick = function(){
+				vbox.style.background = "black";
+				vbox.style.width = "400px";
+				vbox.style.height = "250px";
+				vsource.style.width = "600px";
+				vsource.setAttribute("src","crying.mp4");
+				vsource.play();
+			}
+
+	nobrain.onclick = function(){
+				vbox.style.background = "black";
+				vbox.style.width = "400px";
+				vbox.style.height = "250px";
+				vsource.style.width = "600px";
+				vsource.setAttribute("src","nobrain.mp4");
+				vsource.play();
+			}
+
+	cherry.onclick = function(){
+				vbox.style.background = "black";
+				vbox.style.width = "400px";
+				vbox.style.height = "250px";
+				vsource.style.width = "600px";
+				vsource.setAttribute("src","cherry.mp4");
+				vsource.play();
+			}
+
+	legend.onclick = function(){
+				vbox.style.background = "black";
+				vbox.style.width = "800px";
+				vbox.style.height = "600px";
+				vsource.style.width = "1000px";
+				vsource.setAttribute("src","legend.mp4");
+				vsource.play();
+			}
+
+	buzz.onmouseover = function(){
+            buzz.style.cursor = "pointer";
+        }
+
+    crying.onmouseover = function(){
+            crying.style.cursor = "pointer";
+        }
+
+    nobrain.onmouseover = function(){
+            nobrain.style.cursor = "pointer";
+        }
+
+    cherry.onmouseover = function(){
+            cherry.style.cursor = "pointer";
+        }
+
+    legend.onmouseover = function(){
+            legend.style.cursor = "pointer";
+        }
+
+
+</script>
+</body>
+</html>
